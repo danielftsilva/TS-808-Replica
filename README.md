@@ -29,6 +29,73 @@ This repo details my research, design, assembly, and testing of a replica of the
 
 The design is rooted in the [reference schematic](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/ts-808_original%20reference_circuit.jpg) for the Ibanez TS-808 circuit, capturing the preamp, diode clipping, and tone control sections. This schematic outlines the signal path - from the initial buffering of the input signal through the op-amp stages to the final output drive.
 
+The "heart" of this circuit is the [RC4558](https://www.ti.com/lit/ds/symlink/rc4558.pdf?ts=1740038954763&ref_url=https%253A%252F%252Fwww.google.com%252F), a dual OP-AMP. It handles both the input buffering and the overdrive stages. It's low-noise gives you a warm, smooth distortion (the main and sought-out characteristic of this pedal!). Also, the dual configuration allows one section to amplify the signal while the other handles its tone.
+
+
+<!-- modifications -->
+Features and Modifications
+
+1. Asymmetric Clipping Modification
+
+Change: Replacing diode D2 with two diodes in series introduces asymmetric clipping.
+
+Impact: Produces a more "tube-like" distortion with a different harmonic character, offering a more dynamic response.
+
+2. Clipper Modifications
+
+Change: A toggle switch allows selection between different clipping devices, such as silicon diodes (1N914) and red LEDs.
+
+Impact: Enables multiple distortion textures, providing more flexibility in shaping the pedal’s sound.
+
+3. AMZ Fat Modification
+
+Change: A switch is added to bypass capacitor C3.
+
+Impact: Increases boost and enhances bass response, resulting in a fuller and richer tone.
+
+4. Keeley 808 Reissue Modifications
+
+Changes:
+
+Replace R6 (4.7kΩ) with a 2.4kΩ resistor.
+
+Replace R7 (51kΩ) with a 20kΩ resistor.
+
+Replace C3 (0.047µF) with a 0.1µF capacitor.
+
+Replace C9 (0.22µF) with a 0.18µF capacitor.
+
+Impact: Improves bass response and increases distortion at higher drive settings, enhancing the pedal's versatility.
+
+5. Diode Lift Modification
+
+Change: Uses an on-off-on SPDT toggle switch for the diode clipper selector, allowing diode clippers to be lifted from the feedback loop.
+
+Impact: Enables the pedal to function as a clean booster when the diodes are lifted. At high drive settings, this may introduce a more aggressive, raw distortion.
+
+6. Expensive Boutique Modifications
+
+Changes:
+
+Implements diode switching with a diode lift option.
+
+Applies asymmetric clipping modification.
+
+Replaces the Drive potentiometer with a 1MΩ logarithmic pot.
+
+Impact: Aims to replicate high-end boutique overdrive pedals, providing increased gain and a unique tonal character.
+
+Build Information
+
+The project is built on a PCB based on the original TS-808 schematic, with additional wiring for the modifications.
+
+High-quality components were used to maintain signal integrity and reliability.
+
+The modifications were inspired by well-known guitar pedal modders and adapted to suit a wide range of playing styles.
+<!-- -->
+
+
+
 
 Using KiCad, the PCB layout was meticulously planned to ensure optimal trace routing and minimal interference. Every component placement was verified against the schematic to maintain fidelity to the original design.
 Component Selection and Soldering:
