@@ -2,7 +2,7 @@
 
 <h2>Description</h2>
 
-This repo details my research, design, assembly, and testing of a replica of the iconic TS-808 distortion pedal.
+This repository details my research, design, assembly, and testing of a replica of the iconic TS-808 distortion pedal.
 
 <h2>🎸 Project Summary:</h2>
 
@@ -83,7 +83,7 @@ The modifications were inspired by well-known guitar pedal modders and adapted t
 
 - The [placement afterwards](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/Layout/Placement_2.png) was super simple and straighforward - just had to pay attention to the distance between the components (I used a [1mm track width](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/Layout/tracks_2.png) as it was more than enough for this project).
 
-- This PCB is comprised of a simple 2-layer stackup ([main design rules here](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/production/JLCPCB_KiCad_board_setup_1.png)) - the components occupy the top layer (even though they are all THT). Therefore, in order to not this layer, all the tracks were routed on the bottom layer, which can be seen here in the [final layout](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/Layout/Layout.png). 
+- This PCB is comprised of a simple 2-layer stackup ([main design rules here](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/production/JLCPCB_KiCad_board_setup_1.png)) - the components occupy the top layer (even though they are all THT). Therefore, in order to not this layer, all the tracks were routed on the bottom layer, which can be seen here in the [final layout](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/Layout/Layout.png).
 
 <b>Component Selection and Soldering:</b>
 
@@ -91,109 +91,47 @@ The modifications were inspired by well-known guitar pedal modders and adapted t
 
 - The [PCB](https://github.com/danielftsilva/TS-808-Replica/blob/main/Assembly/PCB_unpopulated.jpg) was ordered from [JLC PCB](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/production/JLC_PCB_order.png) and it measures 75.00mm x 52.00mm. It was intended to fit inside a 127.00mm x 76.250mm [Hammond enclosure](https://eu.mouser.com/ProductDetail/Hammond-Manufacturing/1411NU?qs=k5YXvLLCsLFkprr1MgbOww%3D%3D).
 
-Some soldering tips:
-
-1. Start by soldering sockets to avoid potential heat damage later;
-2. Next, solder resistors and capacitors - paying close attention to the correct polarity;
-3. Follow with diodes and transistors before finally soldering the RC4558.
-
 - Here you can see the [final populated PCB](https://github.com/danielftsilva/TS-808-Replica/blob/main/Assembly/PCB_populated.jpg).
 
 
+<b>Testing and Troubleshooting:</b>
 
-Mechanical Integration:
-Once populated, the PCB is securely mounted within the pedal’s enclosure. The guide stresses the importance of proper mechanical support to minimize vibration and potential interference.
-Wiring and Enclosure Preparation:
+- I started by assembling the populated PCB and external components with the help of a breadboard. Then, I powered up the pedal to check for proper voltage levels and continuity across the circuit using a multimeter.
 
-Wiring Off-Board Components:
-External components such as jacks, switches, and potentiometers are connected following the detailed wiring diagram provided in the guide.
-Wire routing is carefully planned to prevent noise pickup and ensure a tidy internal layout.
-Enclosure Finishing:
-The enclosure is prepared for final assembly, including optional steps like painting or applying a powder coat finish.
-Surface preparation, such as sanding with #220 grit sandpaper, is recommended before painting to ensure durability and a professional look.
-Testing and Troubleshooting:
+- I used [this troubleshooting guide](https://github.com/danielftsilva/TS-808-Replica/blob/main/Tests/TROUBLESHOOTING%20CHART.jpg) for my [check](https://github.com/danielftsilva/TS-808-Replica/blob/main/Tests/schematic%20component%20test%20check.png). It is very useful to diagnose common issues like misoriented components or cold solder joints.
 
-Initial Testing:
-Upon assembly, the pedal is powered up to check for proper voltage levels and continuity across the circuit using a multimeter.
-The guide recommends comparing these readings with expected values to quickly identify any discrepancies.
-Functional Verification:
-Audio tests are performed to confirm the pedal’s distortion characteristics, tone control functionality, and overall signal integrity.
-Detailed test documentation, including images (Pedal_ON_1.jpeg, Pedal_ON_2.jpeg) and video footage (Test.mov), ensures every aspect of the build is verified.
-Troubleshooting Procedures:
-A comprehensive troubleshooting chart (TROUBLESHOOTING CHART.jpg) is provided to diagnose common issues like misoriented components or cold solder joints.
-Additional schematic component tests help verify that each section of the circuit performs as expected.
-Documentation and Quality Assurance:
+- *Note: if you encounter audible noise on this breadboard setup, do not worry too much - it is much likely due to the lack of proper grounding. Also, using somewhat long prototyping cables like I used can help pickup random noise! This should be solved once you assemble everything inside the metal enclosure.*
 
-Throughout the build, every step is thoroughly documented with photos, videos, and checklists as recommended by the GGG guide.
-This extensive documentation not only aids in the initial build process but also serves as a valuable reference for future repairs or modifications, ensuring the project remains replicable and maintainable.
+- Here is [video footage of me testing the complete circuit](https://github.com/danielftsilva/TS-808-Replica/blob/main/Tests/Test.mov), using a breadboard - troubleshooting phase.
+
+- Here you can see the [final assembled pedal turned on](https://github.com/danielftsilva/TS-808-Replica/blob/main/Tests/Pedal_ON_2.jpeg), using a 9V, 1A AC/DC adapter.
+
+- and video footage (Test.mov), ensures every aspect of the build is verified.
 
 
+<b>Mechanical Integration:</b>
+
+- Once populated, the PCB was mounted within the pedal's enclosure. Let the importance of proper mechanical support be stressed! This is to minimize vibration and potential interference.
+
+- The external components - jacks, switches and potentiometers - [were then connected](https://github.com/danielftsilva/TS-808-Replica/blob/main/Assembly/Pedal_assembled_1.jpeg). Wire routing is crucial to prevent noise pickup.
+
+- The enclosure was then prepared for final assembly, including optional steps: in my case, I drilled the [necessary holes](https://github.com/danielftsilva/TS-808-Replica/blob/main/Assembly/Pedal_assembled_2.jpeg) and sanded them with #220 grit sandpaper - this is recommended before painting to ensure more durability. [I painted it green](https://github.com/danielftsilva/TS-808-Replica/blob/main/Assembly/Pedal_assembled_3.jpeg).
 
 
 <h2>🛠️ Tools Needed:</h2>
 
-Soldering iron and stand
+- Soldering iron and stand
 
-Solder
+- Solder
 
-Small side cutters and wire strippers
+- Small side cutters and wire strippers
 
-Hookup wire (24 gauge stranded, insulated)
+- Hookup wire (24 gauge stranded, insulated)
 
-Multimeter
+- Multimeter
 
-Magnifying glass (optional)
+- Magnifying glass (optional)
 
-Close-in bright light (desk lamp)
+- Close-in bright light (desk lamp)
 
-<h2>🔧 Assembly Steps:</h2>
-
-<b>Sockets (if used):</b> Solder any IC sockets first.
-
-<b>Resistors:</b> Solder all resistors in place.
-
-<b>Capacitors:</b> Solder all capacitors.
-
-<b>Diodes and Transistors:</b> Solder diodes and transistors.
-
-<b>Integrated Circuits (ICs):</b> Solder ICs last.
-
-<h2>🛡️ Enclosure Preparation (Optional):</h2>
-
-<b>Painting the Enclosure:</b>
-
-Optionally paint and label the enclosure.
-
-A powder coat finish is recommended for durability.
-
-Smooth the surface with #220 grit sandpaper before painting.
-
-<h2>🔌 Mounting and Wiring:</h2>
-
-<b>Mount the PCB:</b> Secure the PCB inside the enclosure.
-
-<b>Wire Off-Board Components:</b> Connect jacks, switches, and pots following the provided wiring diagram.
-
-<h2>✅ Testing:</h2>
-
-Conduct tests to ensure the pedal functions correctly:
-
-Refer to test images: Pedal_ON_1.jpeg and Pedal_ON_2.jpeg.
-
-Watch the test video: Test.mov.
-
-Use the troubleshooting chart (TROUBLESHOOTING CHART.jpg) and schematic component test check (schematic component test check.png) for reference.
-
-<h2>📸 Results:</h2>
-
-<b>Photos of the Assembled PCB and Pedal:</b>
-
-PCB: PCB_populated.jpg, PCB_unpopulated.jpg
-
-Pedal: Pedal_assembled_1.jpeg, Pedal_assembled_2.jpeg, Pedal_assembled_3.jpeg
-
-<b>Test Results:</b>
-
-Images: Pedal_ON_1.jpeg, Pedal_ON_2.jpeg
-
-Video: Test.mov
+*Credits to [General Guitar Gadgets](https://generalguitargadgets.com/effects-projects/distortion/tube-screamer/).*
