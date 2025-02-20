@@ -17,19 +17,15 @@ This repo details my research, design, assembly, and testing of a replica of the
 <b>Documentation:</b> Photos and documents of every step of the process.
 
 
-
-
-
-
-
-
 <h2>⚡ Implementation Details:</h2>
 
 <b>From Reference Schematic to PCB:</b>
 
-The design is rooted in the [reference schematic](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/ts-808_original%20reference_circuit.jpg) for the Ibanez TS-808 circuit, capturing the preamp, diode clipping, and tone control sections. This schematic outlines the signal path - from the initial buffering of the input signal through the op-amp stages to the final output drive.
+- The design is rooted in the [reference schematic](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/ts-808_original%20reference_circuit.jpg) for the Ibanez TS-808 circuit, capturing the preamp, diode clipping, and tone control sections. This schematic outlines the signal path - from the initial buffering of the input signal through the op-amp stages to the final output drive.
 
-The "heart" of this circuit is the [RC4558](https://www.ti.com/lit/ds/symlink/rc4558.pdf?ts=1740038954763&ref_url=https%253A%252F%252Fwww.google.com%252F), a dual OP-AMP. It handles both the input buffering and the overdrive stages. It's low-noise gives you a warm, smooth distortion (the main and sought-out characteristic of this pedal!). Also, the dual configuration allows one section to amplify the signal while the other handles its tone.
+- The "heart" of this circuit is the [RC4558](https://www.ti.com/lit/ds/symlink/rc4558.pdf?ts=1740038954763&ref_url=https%253A%252F%252Fwww.google.com%252F), a dual OP-AMP. It handles both the input buffering and the overdrive stages. It's low-noise gives you a warm, smooth distortion (the main and sought-out characteristic of this pedal!). Also, the dual configuration allows one section to amplify the signal while the other handles its tone.
+
+- Here you can see the [final circuit schematic](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/Main%20Circuit.png).
 
 <!-- modifications -->
 <!-- There were a few modifications done on the circuit, namely:
@@ -85,23 +81,26 @@ High-quality components were used to maintain signal integrity and reliability.
 The modifications were inspired by well-known guitar pedal modders and adapted to suit a wide range of playing styles. -->
 <!-- -->
 
-Using KiCad, the PCB layout was meticulously planned to ensure optimal trace routing and minimal interference. Every component placement was verified against the schematic to maintain fidelity to the original design.
-Component Selection and Soldering:
+- The [placement afterwards](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/Layout/Placement_2.png) was super simple and straighforward - just had to pay attention to the distance between the components (I used a [1mm track width](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/Layout/tracks_2.png) as it was more than enough for this project).
 
-Component Sourcing:
-High-quality components are selected as per the guide’s recommendations. This includes precision resistors, low-noise capacitors, high-current diodes, and robust transistors and op-amps.
-Soldering Order:
-Start with soldering sockets (if used) to avoid potential heat damage later.
-Next, solder resistors and capacitors—paying close attention to the correct polarity on polarized components.
-Follow with diodes and transistors before finally soldering the integrated circuits (ICs).
-Best Practices:
-Double-check each component’s orientation before soldering.
-Inspect solder joints for any bridges or cold joints to ensure strong, reliable connections.
-Assembly and Integration:
+- This PCB is comprised of a simple 2-layer stackup ([main design rules here](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/production/JLCPCB_KiCad_board_setup_1.png)) - the components occupy the top layer (even though they are all THT). Therefore, in order to not this layer, all the tracks were routed on the bottom layer, which can be seen here in the [final layout](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/Layout/Layout.png). 
 
-PCB Population:
-The PCB is carefully populated component by component, ensuring that the layout mirrors the schematic exactly.
-Visual documentation (e.g., PCB_populated.jpg and PCB_unpopulated.jpg) is used throughout the process to verify correct assembly.
+<b>Component Selection and Soldering:</b>
+
+- The components selected are listed in the [BOM file](https://github.com/danielftsilva/TS-808-Replica/blob/main/BOM/ts_808_generated_BOM.xlsx).
+
+- The [PCB](https://github.com/danielftsilva/TS-808-Replica/blob/main/Assembly/PCB_unpopulated.jpg) was ordered from [JLC PCB](https://github.com/danielftsilva/TS-808-Replica/blob/main/KiCad%20Project/production/JLC_PCB_order.png) and it measures 75.00mm x 52.00mm. It was intended to fit inside a 127.00mm x 76.250mm [Hammond enclosure](https://eu.mouser.com/ProductDetail/Hammond-Manufacturing/1411NU?qs=k5YXvLLCsLFkprr1MgbOww%3D%3D).
+
+Some soldering tips:
+
+1. Start by soldering sockets to avoid potential heat damage later;
+2. Next, solder resistors and capacitors - paying close attention to the correct polarity;
+3. Follow with diodes and transistors before finally soldering the RC4558.
+
+- Here you can see the [final populated PCB](https://github.com/danielftsilva/TS-808-Replica/blob/main/Assembly/PCB_populated.jpg).
+
+
+
 Mechanical Integration:
 Once populated, the PCB is securely mounted within the pedal’s enclosure. The guide stresses the importance of proper mechanical support to minimize vibration and potential interference.
 Wiring and Enclosure Preparation:
