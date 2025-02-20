@@ -31,21 +31,12 @@ The design is rooted in the [reference schematic](https://github.com/danielftsil
 
 The "heart" of this circuit is the [RC4558](https://www.ti.com/lit/ds/symlink/rc4558.pdf?ts=1740038954763&ref_url=https%253A%252F%252Fwww.google.com%252F), a dual OP-AMP. It handles both the input buffering and the overdrive stages. It's low-noise gives you a warm, smooth distortion (the main and sought-out characteristic of this pedal!). Also, the dual configuration allows one section to amplify the signal while the other handles its tone.
 
-
 <!-- modifications -->
-Features and Modifications
+<!-- There were a few modifications done on the circuit, namely:
 
-1. Asymmetric Clipping Modification
+1. Asymmetric clipping: two diodes placed in series (D1 and D2) introduce asymmetric clipping and produce a more "tube-like" distortion with a more dynamic response;
 
-Change: Replacing diode D2 with two diodes in series introduces asymmetric clipping.
-
-Impact: Produces a more "tube-like" distortion with a different harmonic character, offering a more dynamic response.
-
-2. Clipper Modifications
-
-Change: A toggle switch allows selection between different clipping devices, such as silicon diodes (1N914) and red LEDs.
-
-Impact: Enables multiple distortion textures, providing more flexibility in shaping the pedal’s sound.
+2. Clipper change: a lever switch (SPST) allows selection between different clipping devices - in this case between silicon diodes (1N914) and regular red LEDs. This gives us two distortion textures in the same circuit, providing more flexibility in shaping the pedal's sound;
 
 3. AMZ Fat Modification
 
@@ -91,11 +82,8 @@ The project is built on a PCB based on the original TS-808 schematic, with addit
 
 High-quality components were used to maintain signal integrity and reliability.
 
-The modifications were inspired by well-known guitar pedal modders and adapted to suit a wide range of playing styles.
+The modifications were inspired by well-known guitar pedal modders and adapted to suit a wide range of playing styles. -->
 <!-- -->
-
-
-
 
 Using KiCad, the PCB layout was meticulously planned to ensure optimal trace routing and minimal interference. Every component placement was verified against the schematic to maintain fidelity to the original design.
 Component Selection and Soldering:
